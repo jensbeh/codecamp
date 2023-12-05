@@ -7,12 +7,21 @@
 
 import SwiftUI
 import MapKit
+import Charts
 
 struct ResultView: View {
     @ObservedObject var resultsViewModel: ResultsViewModel = ResultsViewModel()
     @State private var selection: UUID?
-
+    
     var body: some View {
+        // TODO Add to ViewModel
+        let winsProcent = Double(resultsViewModel.getWinsCount()) / Double(resultsViewModel.gameStats.count) * 100
+        let roundedWinsProcent = round(winsProcent * 10) / 10
+        let loosesProcent = Double(resultsViewModel.getLooseCount()) / Double(resultsViewModel.gameStats.count) * 100
+        let roundedLoosesProcent = round(loosesProcent * 10) / 10
+        let tidesProcent = Double(resultsViewModel.getTideCount()) / Double(resultsViewModel.gameStats.count) * 100
+        let roundedTidesProcent = round(tidesProcent * 10) / 10
+
         VStack(content: {
             
             // Display Map with all Locations
@@ -71,29 +80,38 @@ struct ResultView: View {
             HStack(content: {
                 VStack(content: {
                     VStack(content: {
-                        Text("Games")
+                        Text("Total Games")
                         Text(String(resultsViewModel.gameStats.count))
                     })
                 })
-                VStack(content: {
-                    VStack(content: {
-                        Text("Wins")
-                        Text(String(resultsViewModel.getWinsCount()))
-                    })
-                })
-                VStack(content: {
-                    VStack(content: {
-                        Text("Loose")
-                        Text(String(resultsViewModel.getLooseCount()))
-                    })
-                })
-                VStack(content: {
-                    VStack(content: {
-                        Text("Tides")
-                        Text(String(resultsViewModel.getTideCount()))
-                    })
-                })
             })
+            
+            Chart {
+                BarMark(
+                    x: .value("Shape Type", ResultType.win.text),
+                    y: .value("Total Count", resultsViewModel.getWinsCount())
+                )
+                .annotation(position: .overlay, alignment: .center, spacing: 3, content: {
+                    Text(String(roundedWinsProcent) + "%")
+                })
+                .foregroundStyle(.green)
+                BarMark(
+                     x: .value("Shape Type", ResultType.loose.text),
+                     y: .value("Total Count", resultsViewModel.getLooseCount())
+                )
+                .annotation(position: .overlay, alignment: .center, spacing: 3, content: {
+                    Text(String(roundedLoosesProcent) + "%")
+                })
+                .foregroundStyle(.red)
+                BarMark(
+                     x: .value("Shape Type", ResultType.tide.text),
+                     y: .value("Total Count", resultsViewModel.getTideCount())
+                )
+                .annotation(position: .overlay, alignment: .center, spacing: 3, content: {
+                    Text(String(roundedTidesProcent) + "%")
+                })
+                .foregroundStyle(.gray)
+            }
         })
     }
 }

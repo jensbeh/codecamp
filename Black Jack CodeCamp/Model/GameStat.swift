@@ -14,8 +14,8 @@ enum ResultType {
     // result text
     var text: String {
         switch self {
-            case .win: return "Win!"
-            case .loose: return "Loose..."
+            case .win: return "Win"
+            case .loose: return "Loose"
             case .tide: return "Tide"
         }
     }

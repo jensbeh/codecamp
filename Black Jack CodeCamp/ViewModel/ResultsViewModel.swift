@@ -14,11 +14,49 @@ class ResultsViewModel: ObservableObject {
     
     init() {
         // Generates few gameStats for testing
-        for _ in 1...5 {
+        for _ in 1...4 {
             gameStats.append(
                 GameStat(
                     time: 1,
                     result: ResultType.win,
+                    finalPlayerValue: 20,
+                    finalBankValue: 35,
+                    landmark:
+                        Landmark(
+                            name: "Test Coord \(51.31098 - Double.random(in: 1..<6))",
+                            coordinates:
+                                Landmark.Coordinates(
+                                    latitude: 51.31098 - Double.random(in: 1..<6),
+                                    longitude: 9.47469
+                                )
+                        )
+                )
+            )
+        }
+        for _ in 1...3 {
+            gameStats.append(
+                GameStat(
+                    time: 1,
+                    result: ResultType.loose,
+                    finalPlayerValue: 20,
+                    finalBankValue: 35,
+                    landmark:
+                        Landmark(
+                            name: "Test Coord \(51.31098 - Double.random(in: 1..<6))",
+                            coordinates:
+                                Landmark.Coordinates(
+                                    latitude: 51.31098 - Double.random(in: 1..<6),
+                                    longitude: 9.47469
+                                )
+                        )
+                )
+            )
+        }
+        for _ in 1...2 {
+            gameStats.append(
+                GameStat(
+                    time: 1,
+                    result: ResultType.tide,
                     finalPlayerValue: 20,
                     finalBankValue: 35,
                     landmark:
