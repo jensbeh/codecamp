@@ -25,7 +25,7 @@ struct Black_Jack_CodeCampApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
         }
         .modelContainer(sharedModelContainer)
     }
