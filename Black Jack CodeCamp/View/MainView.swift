@@ -14,8 +14,11 @@ struct MainView: View {
         NavigationView {
             VStack(content: {
                 Text("Black Jack")
+                NavigationLink(destination: {}) {
+                    Text("Play")
+                }.buttonStyle(.bordered)
                 NavigationLink(destination: ResultView()) {
-                    Text("TEST")
+                    Text("Results")
                 }.buttonStyle(.bordered)
             })
         }

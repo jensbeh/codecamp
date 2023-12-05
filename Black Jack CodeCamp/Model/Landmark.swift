@@ -24,6 +24,7 @@ class Landmark: Identifiable, Equatable  {
         var longitude: Double
     }
     
+    // Methods
     required init(name: String, coordinates: Coordinates) {
         self.name = name
         self.coordinates = coordinates
