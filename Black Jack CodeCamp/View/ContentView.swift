@@ -6,12 +6,19 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct ContentView: View {
-
+    private let vm = MainMenueViewModel()
+    
+    
     var body: some View {
-        Text("Black Jack")
+        NavigationView{
+            MainMenu()
+        }
+    }
+    
+    func playAction(){
+        
     }
 }
 

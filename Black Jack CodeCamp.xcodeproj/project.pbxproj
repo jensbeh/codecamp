@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		160C069F2B1B486B0032DAA3 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160C069E2B1B486B0032DAA3 /* Deck.swift */; };
+		160C06A12B1B48A40032DAA3 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160C06A02B1B48A40032DAA3 /* Game.swift */; };
+		160C06A32B1B48D40032DAA3 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160C06A22B1B48D40032DAA3 /* GameState.swift */; };
+		160C06A52B1B4AE80032DAA3 /* CustomLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160C06A42B1B4AE80032DAA3 /* CustomLocation.swift */; };
+		164D91442B1362D400BD74BF /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164D91432B1362D400BD74BF /* GameView.swift */; };
+		164D914A2B13772C00BD74BF /* MainMenueModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164D91492B13772C00BD74BF /* MainMenueModel.swift */; };
+		164D914C2B137FB100BD74BF /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164D914B2B137FB100BD74BF /* HeaderView.swift */; };
+		164D914F2B167F8B00BD74BF /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164D914E2B167F8B00BD74BF /* MainMenu.swift */; };
+		164D91512B16824300BD74BF /* CustomAssets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164D91502B16824300BD74BF /* CustomAssets.swift */; };
 		6DD795D32AFA3F3900108C59 /* Black_Jack_CodeCampApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD795D22AFA3F3900108C59 /* Black_Jack_CodeCampApp.swift */; };
 		6DD795D52AFA3F3900108C59 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DD795D42AFA3F3900108C59 /* ContentView.swift */; };
 		6DD795D92AFA3F3A00108C59 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6DD795D82AFA3F3A00108C59 /* Assets.xcassets */; };
@@ -34,6 +43,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		160C069E2B1B486B0032DAA3 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		160C06A02B1B48A40032DAA3 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		160C06A22B1B48D40032DAA3 /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		160C06A42B1B4AE80032DAA3 /* CustomLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLocation.swift; sourceTree = "<group>"; };
+		164D91432B1362D400BD74BF /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		164D91492B13772C00BD74BF /* MainMenueModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenueModel.swift; sourceTree = "<group>"; };
+		164D914B2B137FB100BD74BF /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		164D914E2B167F8B00BD74BF /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+		164D91502B16824300BD74BF /* CustomAssets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAssets.swift; sourceTree = "<group>"; };
 		6DD795CF2AFA3F3900108C59 /* Black Jack CodeCamp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Black Jack CodeCamp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DD795D22AFA3F3900108C59 /* Black_Jack_CodeCampApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Black_Jack_CodeCampApp.swift; sourceTree = "<group>"; };
 		6DD795D42AFA3F3900108C59 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,6 +89,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		164D91482B13770B00BD74BF /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				164D91492B13772C00BD74BF /* MainMenueModel.swift */,
+				164D91502B16824300BD74BF /* CustomAssets.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		164D914D2B167F5B00BD74BF /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				164D914B2B137FB100BD74BF /* HeaderView.swift */,
+				164D914E2B167F8B00BD74BF /* MainMenu.swift */,
+			);
+			path = MainScreen;
+			sourceTree = "<group>";
+		};
+		164D91552B1A4F5900BD74BF /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				160C069E2B1B486B0032DAA3 /* Deck.swift */,
+				160C06A02B1B48A40032DAA3 /* Game.swift */,
+				160C06A22B1B48D40032DAA3 /* GameState.swift */,
+				160C06A42B1B4AE80032DAA3 /* CustomLocation.swift */,
+			);
+			path = DataModel;
+			sourceTree = "<group>";
+		};
 		6DD795C62AFA3F3900108C59 = {
 			isa = PBXGroup;
 			children = (
@@ -94,6 +141,8 @@
 		6DD795D12AFA3F3900108C59 /* Black Jack CodeCamp */ = {
 			isa = PBXGroup;
 			children = (
+				164D91552B1A4F5900BD74BF /* DataModel */,
+				164D91482B13770B00BD74BF /* View Model */,
 				6DD795FF2AFA3F9100108C59 /* View */,
 				6DD795FE2AFA3F8900108C59 /* Model */,
 				6DD795D82AFA3F3A00108C59 /* Assets.xcassets */,
@@ -138,7 +187,9 @@
 		6DD795FF2AFA3F9100108C59 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				164D914D2B167F5B00BD74BF /* MainScreen */,
 				6DD795D42AFA3F3900108C59 /* ContentView.swift */,
+				164D91432B1362D400BD74BF /* GameView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -273,7 +324,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				160C06A52B1B4AE80032DAA3 /* CustomLocation.swift in Sources */,
+				164D914C2B137FB100BD74BF /* HeaderView.swift in Sources */,
+				160C069F2B1B486B0032DAA3 /* Deck.swift in Sources */,
+				164D914F2B167F8B00BD74BF /* MainMenu.swift in Sources */,
+				164D914A2B13772C00BD74BF /* MainMenueModel.swift in Sources */,
+				160C06A12B1B48A40032DAA3 /* Game.swift in Sources */,
 				6DD795D52AFA3F3900108C59 /* ContentView.swift in Sources */,
+				164D91512B16824300BD74BF /* CustomAssets.swift in Sources */,
+				160C06A32B1B48D40032DAA3 /* GameState.swift in Sources */,
+				164D91442B1362D400BD74BF /* GameView.swift in Sources */,
 				6DD795D32AFA3F3900108C59 /* Black_Jack_CodeCampApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,6 +500,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Black Jack CodeCamp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.card-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -468,6 +529,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Black Jack CodeCamp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.card-games";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -10,6 +10,8 @@ import SwiftData
 
 @main
 struct Black_Jack_CodeCampApp: App {
+    
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             
