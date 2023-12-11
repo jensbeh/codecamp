@@ -115,4 +115,25 @@ class ResultsViewModel: ObservableObject {
     func getResultIcon(gameStat: GameStat) -> String {
         return gameStat.result.icon
     }
+    
+    /// Method to get the rounded wins percentage
+    /// - Returns: Returns he rounded wins percentage as Double
+    func getRoundedWinsProcent() -> Double {
+        let winsProcent = Double(getWinsCount()) / Double(gameStats.count) * 100
+        return round(winsProcent * 10) / 10
+    }
+    
+    /// Method to get the rounded looses percentage
+    /// - Returns: Returns he rounded looses percentage as Double
+    func getRoundedLoosesProcent() -> Double {
+        let loosesProcent = Double(getLooseCount()) / Double(gameStats.count) * 100
+        return round(loosesProcent * 10) / 10
+    }
+    
+    /// Method to get the rounded draws percentage
+    /// - Returns: Returns he rounded draws percentage as Double
+    func getRoundedDrawsProcent() -> Double {
+        let drawsProcent = Double(getDrawsCount()) / Double(gameStats.count) * 100
+        return round(drawsProcent * 10) / 10
+    }
 }
