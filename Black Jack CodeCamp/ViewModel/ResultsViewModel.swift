@@ -14,7 +14,7 @@ class ResultsViewModel: ObservableObject {
     
     init() {
         // Generates few gameStats for testing
-        for _ in 1...4 {
+        for _ in 1...8 {
             gameStats.append(
                 GameStat(
                     time: 1,
@@ -56,7 +56,7 @@ class ResultsViewModel: ObservableObject {
             gameStats.append(
                 GameStat(
                     time: 1,
-                    result: ResultType.tide,
+                    result: ResultType.draw,
                     finalPlayerValue: 20,
                     finalBankValue: 35,
                     landmark:
@@ -90,11 +90,11 @@ class ResultsViewModel: ObservableObject {
         }.count
     }
     
-    /// Method to get the tides count from all gameStats
-    /// - Returns: Returns the tides count as Int
-    func getTideCount() -> Int {
+    /// Method to get the draws count from all gameStats
+    /// - Returns: Returns the draws count as Int
+    func getDrawsCount() -> Int {
         return gameStats.filter { GameStat in
-            return GameStat.result == ResultType.tide
+            return GameStat.result == ResultType.draw
         }.count
     }
     

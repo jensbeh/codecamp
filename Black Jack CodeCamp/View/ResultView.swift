@@ -19,8 +19,8 @@ struct ResultView: View {
         let roundedWinsProcent = round(winsProcent * 10) / 10
         let loosesProcent = Double(resultsViewModel.getLooseCount()) / Double(resultsViewModel.gameStats.count) * 100
         let roundedLoosesProcent = round(loosesProcent * 10) / 10
-        let tidesProcent = Double(resultsViewModel.getTideCount()) / Double(resultsViewModel.gameStats.count) * 100
-        let roundedTidesProcent = round(tidesProcent * 10) / 10
+        let drawsProcent = Double(resultsViewModel.getDrawsCount()) / Double(resultsViewModel.gameStats.count) * 100
+        let roundedDrawsProcent = round(drawsProcent * 10) / 10
 
         VStack(content: {
             
@@ -104,11 +104,11 @@ struct ResultView: View {
                 })
                 .foregroundStyle(.red)
                 BarMark(
-                     x: .value("Shape Type", ResultType.tide.text),
-                     y: .value("Total Count", resultsViewModel.getTideCount())
+                    x: .value("Shape Type", ResultType.draw.text),
+                    y: .value("Total Count", resultsViewModel.getDrawsCount())
                 )
                 .annotation(position: .overlay, alignment: .center, spacing: 3, content: {
-                    Text(String(roundedTidesProcent) + "%")
+                    Text(String(roundedDrawsProcent) + "%")
                 })
                 .foregroundStyle(.gray)
             }
