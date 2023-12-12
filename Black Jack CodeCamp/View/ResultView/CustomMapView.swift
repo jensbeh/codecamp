@@ -17,7 +17,10 @@ struct CustomMapView: View {
     }
     
     var body: some View {
+        
+        // Show map
         Map(selection: $selection) {
+            // Add markers
             ForEach(resultsViewModel.gameStats) { gameStat in
                 Marker(
                     gameStat.landmark.name,
@@ -37,32 +40,43 @@ struct CustomMapView: View {
                             
                             VStack {
                                 Text("Time")
-                                Text(String(gameStat.time))
+                                    .font(.headline)
+                                Text(String(resultsViewModel.getTimeStr(gameStat: gameStat)))
+                                    .multilineTextAlignment(.center)
                                 Spacer()
                                     .frame(height: 20)
                                 Text("Location")
+                                    .font(.headline)
                                 Text("latitude: " + String(gameStat.landmark.locationCoordinate.latitude) + "\nlongitude: " + String(gameStat.landmark.locationCoordinate.longitude))
                                 Spacer()
                                     .frame(height: 20)
                                 Text("Result Type")
+                                    .font(.headline)
                                 Text(String(resultsViewModel.getResultTypeText(gameStat: gameStat)))
                                 Spacer()
-                                       .frame(height: 20)
-                                   Text("Player Hand Values")
-                                   Text(String(gameStat.finalPlayerValue))
+                                    .frame(height: 20)
+                                Text("Player Hand Values")
+                                    .font(.headline)
+                                Text(String(gameStat.finalPlayerValue))
                                 Spacer()
-                                       .frame(height: 20)
-                                   Text("Bank Hand Values")
-                                   Text(String(gameStat.finalBankValue))
+                                    .frame(height: 20)
+                                Text("Bank Hand Values")
+                                    .font(.headline)
+                                Text(String(gameStat.finalBankValue))
                             }
+                            .padding(10)
                         }
                     }
                 }
                 Spacer()
             }
             .background(.thinMaterial)
+            .padding(.bottom, 20)
+            .cornerRadius(20)
+            .padding(.bottom, -20)
         }
         .onChange(of: selection) {
+            // On selection of marker
             guard let selection else { return }
             guard let item = resultsViewModel.gameStats.first(where: { $0.id == selection }) else { return }
             print("On Tap -- latitude: " + String(item.landmark.locationCoordinate.latitude) + "; longitude: " + String(item.landmark.locationCoordinate.longitude))
@@ -73,5 +87,5 @@ struct CustomMapView: View {
 }
 
 #Preview {
-    MainView()
+    CustomMapView(resultsViewModel: ResultsViewModel())
 }

@@ -10,14 +10,15 @@ import SwiftUI
 import MapKit
 
 class ResultsViewModel: ObservableObject {
-    var gameStats: [GameStat] = []
+    @Published var gameStats: [GameStat] = []
     
     init() {
         // Generates few gameStats for testing
+        // TODO remove later
         for _ in 1...8 {
             gameStats.append(
                 GameStat(
-                    time: 1,
+                    timeInMs: 1702375584071,
                     result: ResultType.win,
                     finalPlayerValue: 20,
                     finalBankValue: 35,
@@ -36,7 +37,7 @@ class ResultsViewModel: ObservableObject {
         for _ in 1...3 {
             gameStats.append(
                 GameStat(
-                    time: 1,
+                    timeInMs: 1702373904884,
                     result: ResultType.loose,
                     finalPlayerValue: 20,
                     finalBankValue: 35,
@@ -55,7 +56,7 @@ class ResultsViewModel: ObservableObject {
         for _ in 1...2 {
             gameStats.append(
                 GameStat(
-                    time: 1,
+                    timeInMs: 1702373503561,
                     result: ResultType.draw,
                     finalPlayerValue: 20,
                     finalBankValue: 35,
@@ -73,7 +74,9 @@ class ResultsViewModel: ObservableObject {
         }
     }
     
-    
+    // ======================
+    // == Wins
+    // ======================
     /// Method to get the wins count from all gameStats
     /// - Returns: Returns the wins count as Int
     func getWinsCount() -> Int {
@@ -82,6 +85,16 @@ class ResultsViewModel: ObservableObject {
         }.count
     }
     
+    /// Method to get the rounded wins percentage
+    /// - Returns: Returns the rounded wins percentage as Double
+    func getRoundedWinsProcent() -> Double {
+        let winsProcent = getWinsCount() > 0 ? Double(getWinsCount()) / Double(gameStats.count) * 100 : 0
+        return round(winsProcent * 10) / 10
+    }
+    
+    // ======================
+    // == Looses
+    // ======================
     /// Method to get the looses count from all gameStats
     /// - Returns: Returns the loose count as Int
     func getLooseCount() -> Int {
@@ -90,6 +103,16 @@ class ResultsViewModel: ObservableObject {
         }.count
     }
     
+    /// Method to get the rounded looses percentage
+    /// - Returns: Returns the rounded looses percentage as Double
+    func getRoundedLoosesProcent() -> Double {
+        let loosesProcent = getLooseCount() > 0 ? Double(getLooseCount()) / Double(gameStats.count) * 100 : 0
+        return round(loosesProcent * 10) / 10
+    }
+    
+    // ======================
+    // == Draws
+    // ======================
     /// Method to get the draws count from all gameStats
     /// - Returns: Returns the draws count as Int
     func getDrawsCount() -> Int {
@@ -98,6 +121,16 @@ class ResultsViewModel: ObservableObject {
         }.count
     }
     
+    /// Method to get the rounded draws percentage
+    /// - Returns: Returns the rounded draws percentage as Double
+    func getRoundedDrawsProcent() -> Double {
+        let drawsProcent = getDrawsCount() > 0 ? Double(getDrawsCount()) / Double(gameStats.count) * 100 : 0
+        return round(drawsProcent * 10) / 10
+    }
+    
+    // ======================
+    // == ResultType
+    // ======================
     /// Method to get the resultType text from specific gameStats
     /// - Returns: Returns the result text as String
     func getResultTypeText(gameStat: GameStat) -> String {
@@ -116,24 +149,23 @@ class ResultsViewModel: ObservableObject {
         return gameStat.result.icon
     }
     
-    /// Method to get the rounded wins percentage
-    /// - Returns: Returns he rounded wins percentage as Double
-    func getRoundedWinsProcent() -> Double {
-        let winsProcent = Double(getWinsCount()) / Double(gameStats.count) * 100
-        return round(winsProcent * 10) / 10
+    // ======================
+    // == Time
+    // ======================
+    /// Method to get the time of gameStat as formatted date string
+    /// - Returns: Returns the time of gameStat as formatted date string
+    func getTimeStr(gameStat: GameStat) -> String {
+        let dateVar = Date.init(timeIntervalSince1970: TimeInterval(gameStat.timeInMs) / 1000)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm§dd.MM.yyyy"
+        return dateFormatter.string(from: dateVar).replacingOccurrences(of: "§", with: "\n") // Move date to next line
     }
     
-    /// Method to get the rounded looses percentage
-    /// - Returns: Returns he rounded looses percentage as Double
-    func getRoundedLoosesProcent() -> Double {
-        let loosesProcent = Double(getLooseCount()) / Double(gameStats.count) * 100
-        return round(loosesProcent * 10) / 10
-    }
-    
-    /// Method to get the rounded draws percentage
-    /// - Returns: Returns he rounded draws percentage as Double
-    func getRoundedDrawsProcent() -> Double {
-        let drawsProcent = Double(getDrawsCount()) / Double(gameStats.count) * 100
-        return round(drawsProcent * 10) / 10
+    // ======================
+    // == GameStats
+    // ======================
+    /// Method to delete all game statistics from gameStats
+    func deleteAllGameStats() {
+        gameStats.removeAll()
     }
 }

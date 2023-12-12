@@ -12,88 +12,97 @@ import Charts
 struct GameStatsView: View {
     @ObservedObject var resultsViewModel: ResultsViewModel
     
-//    @State private var list: [GameStat] = []
-//    
-//    init(resultsViewModel: ResultsViewModel) {
-//        self.resultsViewModel = resultsViewModel
-//        list = resultsViewModel.gameStats
-//    }
-    
     var body: some View {
         ScrollView{
             VStack() {
-                HStack() {
-                    VStack() {
-                        VStack() {
-                            Text("Total Games")
-                            Text(String(resultsViewModel.gameStats.count))
-                        }
-                    }
-                }
                 
+                // Total games
+                Text("Total Games")
+                Text(String(resultsViewModel.gameStats.count))
+                    
+                // Chart of wins, looses, draws
                 Chart {
+                    // Wins
                     BarMark(
                         x: .value("Shape Type", ResultType.win.text),
                         y: .value("Total Count", resultsViewModel.getWinsCount())
                     )
-                    .annotation(position: .overlay, alignment: .center, spacing: 3, content: {
+                    .annotation(position: .overlay, alignment: .center, content: {
                         Text(String(resultsViewModel.getRoundedWinsProcent()) + "%")
                     })
                     .foregroundStyle(.green)
+                    
+                    // Looses
                     BarMark(
                         x: .value("Shape Type", ResultType.loose.text),
                         y: .value("Total Count", resultsViewModel.getLooseCount())
                     )
-                    .annotation(position: .overlay, alignment: .center, spacing: 3, content: {
+                    .annotation(position: .overlay, alignment: .center, content: {
                         Text(String(resultsViewModel.getRoundedLoosesProcent()) + "%")
                     })
                     .foregroundStyle(.red)
+                    
+                    // Draws
                     BarMark(
                         x: .value("Shape Type", ResultType.draw.text),
                         y: .value("Total Count", resultsViewModel.getDrawsCount())
                     )
-                    .annotation(position: .overlay, alignment: .center, spacing: 3, content: {
+                    .annotation(position: .overlay, alignment: .center, content: {
                         Text(String(resultsViewModel.getRoundedDrawsProcent()) + "%")
                     })
                     .foregroundStyle(.gray)
                 }
+                .chartYScale(domain: 0...max(resultsViewModel.getWinsCount(), resultsViewModel.getLooseCount(), resultsViewModel.getDrawsCount()))
                 .frame(height: 250)
                 
                 Spacer()
                     .frame(height: 30)
                 
-
-//                Table(list) {
-//                    TableColumn("Time") { gameStat in
-//                        Text(String(gameStat.time))
-//                    }
-//                    TableColumn("Result") { gameStat in
-//                        Text(gameStat.result.text)
-//                    }
-//                    TableColumn("Player Value") { gameStat in
-//                        Text(String(gameStat.finalPlayerValue))
-//                    }
-//                    TableColumn("Bank Value") { gameStat in
-//                        Text(String(gameStat.finalBankValue))
-//                    }
-//                }
-
-                // Show list of gameStats
-                VStack {
-                    Text("All Game Statistics")
-                        .font(.headline)
+                // List of gameStats
+                Grid {
+                    // Headline of grid
+                    GridRow {
+                        Text("Time")
+                        Text("Result")
+                        Text("Player Hand")
+                            .multilineTextAlignment(.center)
+                        Text("Bank Hand")
+                            .multilineTextAlignment(.center)
+                    }.padding(.top, 5)
+                    .bold()
+                    .font(.headline)
+                    .frame(height: 50)
+                    
                     Divider()
-                        .frame(height: 5)
-                    ForEach(resultsViewModel.gameStats) { gameStat in
-                        GameStatRow(gameStat: gameStat)
+                    
+                    // Further lines of grid
+                    // Show text if no gameStats are available
+                    if resultsViewModel.gameStats.isEmpty {
+                        HStack {
+                            Text("No game statistics are currently available. Please play a round first to see your statistics! :)")
+                                .multilineTextAlignment(.center)
+                        }
+                    } else {
+                        // Show gameStats
+                        ForEach(resultsViewModel.gameStats) { gameStat in
+                            GridRow {
+                                Text(resultsViewModel.getTimeStr(gameStat: gameStat))
+                                    .multilineTextAlignment(.center)
+                                Text(gameStat.result.text)
+                                Text(String(gameStat.finalPlayerValue))
+                                Text(String(gameStat.finalBankValue))
+                            }
+                            if gameStat != resultsViewModel.gameStats.last {
+                                Divider()
+                            }
+                        }.padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
                     }
-                }.padding(.top, 10)
-                    .padding(.bottom, 10)
-                    .background(.gray.opacity(0.2))
+                }.background(.gray.opacity(0.3))
                     .cornerRadius(10)
             }
             .padding(.leading, 20)
             .padding(.trailing, 20)
+            .padding(.bottom, 20)
         }
         
     }

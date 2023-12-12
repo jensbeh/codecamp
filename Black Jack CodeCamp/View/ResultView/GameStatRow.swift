@@ -12,7 +12,7 @@ struct GameStatRow: View {
     
     var body: some View {
        HStack {
-          Text(String(gameStat.time))
+          Text(String(gameStat.timeInMs))
               .frame(maxWidth: .infinity)
           Text(gameStat.result.text)
               .frame(maxWidth: .infinity)

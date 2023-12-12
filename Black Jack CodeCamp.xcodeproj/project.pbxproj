@@ -10,7 +10,6 @@
 		6D808B912B270BB7006C245E /* ResultType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D808B902B270BB7006C245E /* ResultType.swift */; };
 		6D808B942B271018006C245E /* GameStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D808B932B271018006C245E /* GameStatsView.swift */; };
 		6D808B962B271183006C245E /* CustomMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D808B952B271183006C245E /* CustomMapView.swift */; };
-		6D808B982B272D1B006C245E /* GameStatRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D808B972B272D1B006C245E /* GameStatRow.swift */; };
 		6D9926182B14A37D00AB96D7 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9926172B14A37D00AB96D7 /* ResultView.swift */; };
 		6D99261B2B14A66300AB96D7 /* ResultsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D99261A2B14A66300AB96D7 /* ResultsViewModel.swift */; };
 		6D99261D2B14A90E00AB96D7 /* Landmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D99261C2B14A90E00AB96D7 /* Landmark.swift */; };
@@ -45,7 +44,6 @@
 		6D808B902B270BB7006C245E /* ResultType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultType.swift; sourceTree = "<group>"; };
 		6D808B932B271018006C245E /* GameStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatsView.swift; sourceTree = "<group>"; };
 		6D808B952B271183006C245E /* CustomMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomMapView.swift; sourceTree = "<group>"; };
-		6D808B972B272D1B006C245E /* GameStatRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatRow.swift; sourceTree = "<group>"; };
 		6D9926172B14A37D00AB96D7 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		6D99261A2B14A66300AB96D7 /* ResultsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewModel.swift; sourceTree = "<group>"; };
 		6D99261C2B14A90E00AB96D7 /* Landmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Landmark.swift; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 				6D9926172B14A37D00AB96D7 /* ResultView.swift */,
 				6D808B932B271018006C245E /* GameStatsView.swift */,
 				6D808B952B271183006C245E /* CustomMapView.swift */,
-				6D808B972B272D1B006C245E /* GameStatRow.swift */,
 			);
 			path = ResultView;
 			sourceTree = "<group>";
@@ -315,7 +312,6 @@
 			files = (
 				6D808B912B270BB7006C245E /* ResultType.swift in Sources */,
 				6DD795D52AFA3F3900108C59 /* MainView.swift in Sources */,
-				6D808B982B272D1B006C245E /* GameStatRow.swift in Sources */,
 				6DCB575C2B1F3AFF005E4DBD /* GameStat.swift in Sources */,
 				6DD795D32AFA3F3900108C59 /* Black_Jack_CodeCampApp.swift in Sources */,
 				6D808B942B271018006C245E /* GameStatsView.swift in Sources */,
