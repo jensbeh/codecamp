@@ -16,10 +16,6 @@ struct ContentView: View {
             MainMenu()
         }
     }
-    
-    func playAction(){
-        
-    }
 }
 
 #Preview {

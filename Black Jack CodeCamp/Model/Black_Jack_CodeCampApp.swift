@@ -14,7 +14,7 @@ struct Black_Jack_CodeCampApp: App {
     
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            
+            Game.self, CustomLocation.self, Deck.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 

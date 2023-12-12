@@ -6,9 +6,9 @@
 //
 
 import Foundation
+import SwiftData
 
-
-enum GameState {
+enum GameState: Codable {
 case finished
 case running
 }
