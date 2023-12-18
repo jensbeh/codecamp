@@ -17,11 +17,13 @@ struct MainView: View {
                 NavigationLink(destination: {}) {
                     Text("Play")
                 }.buttonStyle(.bordered)
+                .accessibilityIdentifier("mainMenuButtonPlay")
                 NavigationLink(destination: ResultView()) {
                     Text("Results")
                 }.buttonStyle(.bordered)
+                .accessibilityIdentifier("mainMenuButtonResults")
             })
-        }
+        }.accessibilityIdentifier("mainMenuView")
     }
 }
 

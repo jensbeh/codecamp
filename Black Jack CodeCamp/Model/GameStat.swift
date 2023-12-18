@@ -7,7 +7,9 @@
 
 import Foundation
 import SwiftUI
+import SwiftData
 
+@Model
 class GameStat: Identifiable, Equatable {
     var id = UUID()
     var timeInMs: Int // timeIntervalSince1970 in milliseconds

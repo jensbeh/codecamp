@@ -30,6 +30,7 @@ struct CustomMapView: View {
                 .tint(resultsViewModel.getResultColor(gameStat: gameStat))
             }
         }
+        .accessibilityIdentifier("customMapViewMap")
         .safeAreaInset(edge: .bottom) {
             // Specific Location/Game informations on click
             HStack {
