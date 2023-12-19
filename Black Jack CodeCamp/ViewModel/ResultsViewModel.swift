@@ -15,63 +15,63 @@ class ResultsViewModel: ObservableObject {
     init() {
         // Generates few gameStats for testing
         // TODO remove later
-        for _ in 1...8 {
-            gameStats.append(
-                GameStat(
-                    timeInMs: 1702375584071,
-                    result: ResultType.win,
-                    finalPlayerValue: 20,
-                    finalBankValue: 35,
-                    landmark:
-                        Landmark(
-                            name: "Test Coord \(51.31098 - Double.random(in: 1..<6))",
-                            coordinates:
-                                Landmark.Coordinates(
-                                    latitude: 51.31098 - Double.random(in: 1..<6),
-                                    longitude: 9.47469
-                                )
-                        )
-                )
-            )
-        }
-        for _ in 1...3 {
-            gameStats.append(
-                GameStat(
-                    timeInMs: 1702373904884,
-                    result: ResultType.lose,
-                    finalPlayerValue: 20,
-                    finalBankValue: 35,
-                    landmark:
-                        Landmark(
-                            name: "Test Coord \(51.31098 - Double.random(in: 1..<6))",
-                            coordinates:
-                                Landmark.Coordinates(
-                                    latitude: 51.31098 - Double.random(in: 1..<6),
-                                    longitude: 9.47469
-                                )
-                        )
-                )
-            )
-        }
-        for _ in 1...2 {
-            gameStats.append(
-                GameStat(
-                    timeInMs: 1702373503561,
-                    result: ResultType.tie,
-                    finalPlayerValue: 20,
-                    finalBankValue: 35,
-                    landmark:
-                        Landmark(
-                            name: "Test Coord \(51.31098 - Double.random(in: 1..<6))",
-                            coordinates:
-                                Landmark.Coordinates(
-                                    latitude: 51.31098 - Double.random(in: 1..<6),
-                                    longitude: 9.47469
-                                )
-                        )
-                )
-            )
-        }
+//        for _ in 1...8 {
+//            gameStats.append(
+//                GameStat(
+//                    timeInMs: 1702375584071,
+//                    result: ResultType.win,
+//                    finalPlayerValue: 20,
+//                    finalBankValue: 35,
+//                    landmark:
+//                        Landmark(
+//                            name: "Test Coord \(51.31098 - Double.random(in: 1..<6))",
+//                            coordinates:
+//                                Landmark.Coordinates(
+//                                    latitude: 51.31098 - Double.random(in: 1..<6),
+//                                    longitude: 9.47469
+//                                )
+//                        )
+//                )
+//            )
+//        }
+//        for _ in 1...3 {
+//            gameStats.append(
+//                GameStat(
+//                    timeInMs: 1702373904884,
+//                    result: ResultType.lose,
+//                    finalPlayerValue: 20,
+//                    finalBankValue: 35,
+//                    landmark:
+//                        Landmark(
+//                            name: "Test Coord \(51.31098 - Double.random(in: 1..<6))",
+//                            coordinates:
+//                                Landmark.Coordinates(
+//                                    latitude: 51.31098 - Double.random(in: 1..<6),
+//                                    longitude: 9.47469
+//                                )
+//                        )
+//                )
+//            )
+//        }
+//        for _ in 1...2 {
+//            gameStats.append(
+//                GameStat(
+//                    timeInMs: 1702373503561,
+//                    result: ResultType.tie,
+//                    finalPlayerValue: 20,
+//                    finalBankValue: 35,
+//                    landmark:
+//                        Landmark(
+//                            name: "Test Coord \(51.31098 - Double.random(in: 1..<6))",
+//                            coordinates:
+//                                Landmark.Coordinates(
+//                                    latitude: 51.31098 - Double.random(in: 1..<6),
+//                                    longitude: 9.47469
+//                                )
+//                        )
+//                )
+//            )
+//        }
     }
     
     // ======================

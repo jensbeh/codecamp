@@ -6,8 +6,10 @@
 //
 
 import XCTest
+import SwiftData
 @testable import Black_Jack_CodeCamp
 
+@MainActor
 final class ResultViewTests: XCTestCase {
     struct AccessibilityIdentifier {
         static let mainMenuButtonResults = "mainMenuButtonResults"
@@ -63,6 +65,27 @@ final class ResultViewTests: XCTestCase {
         XCTAssertTrue(customMapViewMap.exists)
     }
     
+    func testOpenMarkerOnMap() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        changeToResultView(app: app)
+
+        // Click on resultViewMapButton
+        let resultViewMapButton = app.buttons[AccessibilityIdentifier.resultViewMapButton]
+        XCTAssertTrue(resultViewMapButton.exists)
+        resultViewMapButton.tap()
+        // Check if map view is viewed
+        let customMapViewMap = app.otherElements[AccessibilityIdentifier.customMapViewMap]
+        XCTAssertTrue(customMapViewMap.exists)
+        
+        
+            let test = app.debugDescription.utf8
+            print(test)
+        
+        
+    }
+    
     func testDeleteAllStats() throws {
         let app = XCUIApplication()
         // TODO Add gameStats
@@ -81,7 +104,9 @@ final class ResultViewTests: XCTestCase {
         XCTAssertTrue(resultViewDeleteStatsCancelButton.exists)
         resultViewDeleteStatsCancelButton.tap()
         
-        // TODO check gamestats count
+        // Check if alert is removed
+        let resultViewDeleteStatsCancelButton2 = app.buttons[AccessibilityIdentifier.resultViewDeleteStatsCancelButton]
+        XCTAssertFalse(resultViewDeleteStatsCancelButton2.exists)
         
         // YES BUTTON
         // Click on resultViewDeleteStatsButton
@@ -93,7 +118,9 @@ final class ResultViewTests: XCTestCase {
         XCTAssertTrue(resultViewDeleteStatsYesButton.exists)
         resultViewDeleteStatsYesButton.tap()
         
-        // TODO check gamestats count
+        // Check if alert is removed
+        let resultViewDeleteStatsYesButton2 = app.buttons[AccessibilityIdentifier.resultViewDeleteStatsYesButton]
+        XCTAssertFalse(resultViewDeleteStatsYesButton2.exists)
         
         
 //        let test = app.debugDescription.utf8
