@@ -38,7 +38,7 @@ class ResultsViewModel: ObservableObject {
             gameStats.append(
                 GameStat(
                     timeInMs: 1702373904884,
-                    result: ResultType.loose,
+                    result: ResultType.lose,
                     finalPlayerValue: 20,
                     finalBankValue: 35,
                     landmark:
@@ -57,7 +57,7 @@ class ResultsViewModel: ObservableObject {
             gameStats.append(
                 GameStat(
                     timeInMs: 1702373503561,
-                    result: ResultType.draw,
+                    result: ResultType.tie,
                     finalPlayerValue: 20,
                     finalBankValue: 35,
                     landmark:
@@ -93,39 +93,39 @@ class ResultsViewModel: ObservableObject {
     }
     
     // ======================
-    // == Looses
+    // == Loses
     // ======================
-    /// Method to get the looses count from all gameStats
-    /// - Returns: Returns the loose count as Int
-    func getLooseCount() -> Int {
+    /// Method to get the loses count from all gameStats
+    /// - Returns: Returns the loses count as Int
+    func getLoseCount() -> Int {
         return gameStats.filter { GameStat in
-            return GameStat.result == ResultType.loose
+            return GameStat.result == ResultType.lose
         }.count
     }
     
-    /// Method to get the rounded looses percentage
-    /// - Returns: Returns the rounded looses percentage as Double
-    func getRoundedLoosesProcent() -> Double {
-        let loosesProcent = getLooseCount() > 0 ? Double(getLooseCount()) / Double(gameStats.count) * 100 : 0
-        return round(loosesProcent * 10) / 10
+    /// Method to get the rounded loses percentage
+    /// - Returns: Returns the rounded loses percentage as Double
+    func getRoundedLosesProcent() -> Double {
+        let losesProcent = getLoseCount() > 0 ? Double(getLoseCount()) / Double(gameStats.count) * 100 : 0
+        return round(losesProcent * 10) / 10
     }
     
     // ======================
-    // == Draws
+    // == Ties
     // ======================
-    /// Method to get the draws count from all gameStats
-    /// - Returns: Returns the draws count as Int
-    func getDrawsCount() -> Int {
+    /// Method to get the ties count from all gameStats
+    /// - Returns: Returns the ties count as Int
+    func getTiesCount() -> Int {
         return gameStats.filter { GameStat in
-            return GameStat.result == ResultType.draw
+            return GameStat.result == ResultType.tie
         }.count
     }
     
-    /// Method to get the rounded draws percentage
-    /// - Returns: Returns the rounded draws percentage as Double
-    func getRoundedDrawsProcent() -> Double {
-        let drawsProcent = getDrawsCount() > 0 ? Double(getDrawsCount()) / Double(gameStats.count) * 100 : 0
-        return round(drawsProcent * 10) / 10
+    /// Method to get the rounded ties percentage
+    /// - Returns: Returns the rounded ties percentage as Double
+    func getRoundedTiesProcent() -> Double {
+        let tiesProcent = getTiesCount() > 0 ? Double(getTiesCount()) / Double(gameStats.count) * 100 : 0
+        return round(tiesProcent * 10) / 10
     }
     
     // ======================

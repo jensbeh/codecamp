@@ -9,14 +9,14 @@ import Foundation
 import SwiftUI
 
 enum ResultType {
-    case win, loose, draw
+    case win, lose, tie
     
     // result text
     var text: String {
         switch self {
             case .win: return "Win"
-            case .loose: return "Loose"
-            case .draw: return "Draw"
+            case .lose: return "Lose"
+            case .tie: return "Tie"
         }
     }
     
@@ -24,8 +24,8 @@ enum ResultType {
     var color: Color {
         switch self {
             case .win: return Color.green
-            case .loose: return Color.red
-            case .draw: return Color.gray
+            case .lose: return Color.red
+            case .tie: return Color.gray
         }
     }
     
@@ -33,8 +33,8 @@ enum ResultType {
     var icon: String {
         switch self {
             case .win: return "checkmark"
-            case .loose: return "xmark"
-            case .draw: return "equal"
+            case .lose: return "xmark"
+            case .tie: return "equal"
         }
     }
 }

@@ -20,7 +20,7 @@ struct GameStatsView: View {
                 Text("Total Games")
                 Text(String(resultsViewModel.gameStats.count))
                     
-                // Chart of wins, looses, draws
+                // Chart of wins, loses, ties
                 Chart {
                     // Wins
                     BarMark(
@@ -32,27 +32,27 @@ struct GameStatsView: View {
                     })
                     .foregroundStyle(.green)
                     
-                    // Looses
+                    // Loses
                     BarMark(
-                        x: .value("Shape Type", ResultType.loose.text),
-                        y: .value("Total Count", resultsViewModel.getLooseCount())
+                        x: .value("Shape Type", ResultType.lose.text),
+                        y: .value("Total Count", resultsViewModel.getLoseCount())
                     )
                     .annotation(position: .overlay, alignment: .center, content: {
-                        Text(String(resultsViewModel.getRoundedLoosesProcent()) + "%")
+                        Text(String(resultsViewModel.getRoundedLosesProcent()) + "%")
                     })
                     .foregroundStyle(.red)
                     
-                    // Draws
+                    // Ties
                     BarMark(
-                        x: .value("Shape Type", ResultType.draw.text),
-                        y: .value("Total Count", resultsViewModel.getDrawsCount())
+                        x: .value("Shape Type", ResultType.tie.text),
+                        y: .value("Total Count", resultsViewModel.getTiesCount())
                     )
                     .annotation(position: .overlay, alignment: .center, content: {
-                        Text(String(resultsViewModel.getRoundedDrawsProcent()) + "%")
+                        Text(String(resultsViewModel.getRoundedTiesProcent()) + "%")
                     })
                     .foregroundStyle(.gray)
                 }
-                .chartYScale(domain: 0...max(resultsViewModel.getWinsCount(), resultsViewModel.getLooseCount(), resultsViewModel.getDrawsCount()))
+                .chartYScale(domain: 0...max(resultsViewModel.getWinsCount(), resultsViewModel.getLoseCount(), resultsViewModel.getTiesCount()))
                 .frame(height: 250)
                 
                 Spacer()

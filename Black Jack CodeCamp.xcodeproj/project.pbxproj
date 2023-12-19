@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6D76165B2B3047D800D6806A /* vonNoah.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76165A2B3047D800D6806A /* vonNoah.swift */; };
 		6D76165F2B304D7F00D6806A /* MainViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76165E2B304D7F00D6806A /* MainViewTests.swift */; };
 		6D7616612B30555E00D6806A /* GameStatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7616602B30555E00D6806A /* GameStatTests.swift */; };
 		6D7616632B3074AA00D6806A /* ResultViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D7616622B3074AA00D6806A /* ResultViewTests.swift */; };
@@ -43,7 +42,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		6D76165A2B3047D800D6806A /* vonNoah.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = vonNoah.swift; sourceTree = "<group>"; };
 		6D76165E2B304D7F00D6806A /* MainViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewTests.swift; sourceTree = "<group>"; };
 		6D7616602B30555E00D6806A /* GameStatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameStatTests.swift; sourceTree = "<group>"; };
 		6D7616622B3074AA00D6806A /* ResultViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultViewTests.swift; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 		6DD795E42AFA3F3A00108C59 /* Black Jack CodeCampTests */ = {
 			isa = PBXGroup;
 			children = (
-				6D76165A2B3047D800D6806A /* vonNoah.swift */,
 				6D7616602B30555E00D6806A /* GameStatTests.swift */,
 			);
 			path = "Black Jack CodeCampTests";
@@ -332,7 +329,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D76165B2B3047D800D6806A /* vonNoah.swift in Sources */,
 				6D7616612B30555E00D6806A /* GameStatTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
